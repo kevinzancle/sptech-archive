@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Consumo Anual de Refrigerante</h1>
+    <span>Quantas latinhas de refrigerante são ingeridas por dia?: </span>
+    <input type="number" id="quantidade">
+    <button onclick="calcular()">Quantos Refris?</button>
+    <div id="exibir"></div>
+    <div id="exibirIf"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        let qtd_latas = Number(quantidade.value)
+        let qtd_latas_anual = qtd_latas * 365
+        exibir.innerHTML = `São ingeridas ${qtd_latas} latinhas por dia` + "<br>" + `Resultando em ${qtd_latas_anual} latinhas por ano`
+
+        if(qtd_latas_anual >= 500){
+            exibirIf.innerHTML = "Cuidado com a diabetes!"
+        }
+    }
+</script>

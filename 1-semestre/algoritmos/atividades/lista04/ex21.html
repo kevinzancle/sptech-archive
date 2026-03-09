@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21</title>
+</head>
+<body>
+    <h1>Pesquisa sobre os tipos de Pokémon</h1>
+    <span>Digite o seu nome: </span>
+    <input type="text" id="ipt_nome">
+    <br>
+    <span>Digite o tipo do pokemon (em lower case e sem acentos): </span>
+    <input type="text" id="ipt_tipo_pokemon">
+    <br>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function pesquisar(){
+        nome_treinador = ipt_nome.value
+        tipo_pokemon = ipt_tipo_pokemon.value
+        if(tipo_pokemon == "fogo"){
+            div_exibir_mensagem.innerHTML = 
+            `<br>Olá, ${nome_treinador}, aqui está as informações sobre o tipo Fogo: <br>
+                - Ele é forte contra Planta;<br>
+                - Ele é fraco contra Fogo, Água e Dragão;<br>
+                - Ele é resistente contra Fogo e Planta;<br>
+                - Ele não é resistente contra Água.<br>
+              Boa sorte em sua jornada Pokémon!`
+        }else if(tipo_pokemon == "agua"){
+            div_exibir_mensagem.innerHTML = 
+            `<br>Olá, ${nome_treinador}, aqui está as informações sobre o tipo Água: <br>
+               - Ele é forte contra Fogo;<br>
+               - Ele é fraco contra Água, Planta e Dragão;<br>
+               - Ele é resistente contra Fogo e Água;<br>
+               - Ele não é resistente contra Planta e Elétrico.<br>
+              Boa sorte em sua jornada Pokémon!`
+        }else if(tipo_pokemon == "planta"){
+            div_exibir_mensagem.innerHTML = 
+            `<br>Olá, ${nome_treinador}, aqui está as informações sobre o tipo Planta: <br>
+                - Ele é forte contra Água;<br>
+                - Ele é fraco contra Fogo, Planta e Dragão;<br>
+                - Ele é resistente contra Água, Planta e Elétrico;<br>
+                - Ele não é resistente contra Fogo.
+              Boa sorte em sua jornada Pokémon!`
+        }else if(tipo_pokemon == "eletrico"){
+            div_exibir_mensagem.innerHTML = 
+            `<br>Olá, ${nome_treinador}, aqui está as informações sobre o tipo Elétrico: <br>
+                 - Ele é forte contra Água;<br>
+                 - Ele é fraco contra Planta, Elétrico e Dragão;<br>
+                 - Ele é resistente contra Elétrico;<br>
+                 - Ele não é resistente contra nada.<br>
+              Boa sorte em sua jornada Pokémon!`
+        }else if(tipo_pokemon == "dragao"){
+            div_exibir_mensagem.innerHTML = 
+            `<br>Olá, ${nome_treinador}, aqui está as informações sobre o tipo Dragão: <br>
+                 - Ele é forte contra Dragão;<br>
+                 - Ele não é fraco contra nada;<br>
+                 - Ele é resistente contra Fogo, Água, Planta e Elétrico;<br>
+                 - Ele não é resistente contra Dragão.<br>
+              Boa sorte em sua jornada Pokémon!`
+        }else{
+            div_exibir_mensagem.innerHTML = `Tipo inválido!`
+        }
+    }
+</script>

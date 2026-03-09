@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Autoescola Inteligente: Você Já Pode Tirar a CNH?</h1>
+    <span>Digite o seu nome: </span>
+    <input type="text" id="ipt_nome">
+    <br>
+    <span>Digite a sua idade: </span>
+    <input type="number" id="ipt_idade">
+    <br>
+    <button onclick="avaliar()">Avaliar Aluno</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        idade = Number(ipt_idade.value)
+        if(idade >= 18){
+            exibir.innerHTML = `${ipt_nome.value}, vamos tirar a CNH?`
+        }else{
+            exibir.innerHTML = `${ipt_nome.value}, vai jogar PlayStation!`
+        }
+    }
+</script>

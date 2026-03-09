@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>Aposentadoria: quanto falta?</h1>
+    <span>Digite a sua idade: </span>
+    <input type="number" id="ipt_idade">
+    <button onclick="calcular_tempoh()">Verificar Homem</button>
+    <button onclick="calcular_tempom()">Verificar Mulher</button>
+</body>
+</html>
+<script>
+    function calcular_tempoh() {
+        alert("Faltam " + (70 - Number(ipt_idade.value)) + " anos para a aposentadoria!")
+    }
+    function calcular_tempom() {
+        alert("Faltam " + (60 - Number(ipt_idade.value)) + " anos para a aposentadoria!")
+    }
+</script>

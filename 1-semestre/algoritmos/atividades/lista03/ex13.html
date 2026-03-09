@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <h1>Cálculo de Gastos com Transporte</h1>
+    <span>Digite o valor da passagem: </span>
+    <input type="number" id="valor">
+    <span>Digite a quantidade de viagens</span>
+    <input type="number" id="quantidade">
+    <span>Digite a distância até o trabalho (em km)</span>
+    <input type="number" id="distancia">
+    <button onclick="calcular()">Calcular</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        valor = Number(valor.value)
+        quantidade = Number(quantidade.value)
+        distancia = Number(distancia.value)
+
+
+        quantidade_outro = quantidade*0.1
+        preco_viagens = (quantidade*0.9)*valor
+        preco_outro = quantidade_outro*((distancia*0.9)*0.75)
+        exibir.innerHTML = `Valor total gasto mensalmente: ${preco_outro+preco_viagens}`
+    }
+</script>

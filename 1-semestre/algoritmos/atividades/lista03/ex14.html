@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Transformações Saiyajin e Poder de Luta</h1>
+    <span>Digite o Ki base do guerreiro: </span>
+    <input type="text" id="ki_base">
+    <span>Transformar em: </span>
+    <button onclick="ssj1()">SSJ 1</button>
+    <button onclick="ssj2()">SSJ 2</button>
+    <button onclick="ssj3()">SSJ 3</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function ssj1(){
+        exibir.innerHTML = `Após se transformar em SSJ 1, o Ki será: ${Number(ki_base.value)*50}`
+    }
+    function ssj2(){
+        exibir.innerHTML = `Após se transformar em SSJ 2, o Ki será: ${Number(ki_base.value)*100 }`
+    }
+    function ssj3(){
+        exibir.innerHTML = `Após se transformar em SSJ 3, o Ki será: ${Number(ki_base.value)*200}`
+    }
+</script>

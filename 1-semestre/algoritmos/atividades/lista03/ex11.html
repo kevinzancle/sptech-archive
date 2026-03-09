@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h1>Tabuada Interativa</h1>
+    <span>Digite o número que deseja a tabuada: </span>
+    <input type="number" id="numero">
+    <button onclick="tabuada()">a</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function tabuada(){
+        exibir.innerHTML = `${Number(numero.value)} X 1 = ${Number(numero.value) * 1}` + "<br>" + `${Number(numero.value)} X 2 = ${Number(numero.value) * 2}` + "<br>" + `${Number(numero.value)} X 3 = ${Number(numero.value) * 3}` + "<br>" + `${Number(numero.value)} X 4 = ${Number(numero.value) * 4}` + "<br>" + `${Number(numero.value)} X 5 = ${Number(numero.value) * 5}` + "<br>" + `${Number(numero.value)} X 6 = ${Number(numero.value) * 6}` + "<br>" + `${Number(numero.value)} X 7 = ${Number(numero.value) * 7}` + "<br>" + `${Number(numero.value)} X 8 = ${Number(numero.value) * 8}` + "<br>" + `${Number(numero.value)} X 9 = ${Number(numero.value) * 9}`
+    }
+</script>

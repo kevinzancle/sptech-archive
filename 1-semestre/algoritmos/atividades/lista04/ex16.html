@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+</head>
+<body>
+    <h1>Promoção de Chocolates: Calcule o Valor da Sua Compra</h1>
+    <span>Digite a quantidade de chocolates comprados: </span>
+    <input type="number" id="ipt_qtd_chocolate">
+    <button onclick="calcular()">Calcular</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        let valor_chocolate = 3.0
+        let quantidade_chocolate = Number(ipt_qtd_chocolate.value)
+        if(quantidade_chocolate > 12){
+            valor_chocolate = 2.5
+        }
+        div_exibir.innerHTML = `O valor a ser pago será de ${quantidade_chocolate*valor_chocolate}`
+    }
+</script>

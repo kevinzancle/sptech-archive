@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro de local de nascimento</h1>
+    <span>Insira a cidade natal: </span>
+    <input type="text" id="ipt_cidadeNatal">
+    <span>Insira o ano de nascimento</span>
+    <input type="text" id="ipt_anoNascimento">
+    <button onclick="exibirDados()">Enviar</button>
+</body>
+</html>
+<script>
+    function exibirDados() {
+        alert("Cidade natal: " + ipt_cidadeNatal.value + "\n" + "Ano de nascimento: " + ipt_anoNascimento.value)
+    }
+</script>

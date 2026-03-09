@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Insira o primeiro número: </span>
+    <input type="number" id="ipt_number1">
+    <span>INsira o segundo número: </span>
+    <input type="number" id="ipt_number2">
+    <button onclick="calcular()">calcular</button>
+</body>
+</html>
+<script>
+    function calcular() {
+        alert("A soma é:" + (Number(ipt_number1.value) + Number(ipt_number2.value)))
+        alert("A subtração é:" + (Number(ipt_number1.value) - Number(ipt_number2.value)))
+        alert("A multiplicação é:" + (Number(ipt_number1.value) * Number(ipt_number2.value)))
+        alert("A divisão é:" + (Number(ipt_number1.value) / Number(ipt_number2.value)))
+        alert("O resto da divisão é:" + (Number(ipt_number1.value) % Number(ipt_number2.value)))
+        alert("A potenciação é:" + (Number(ipt_number1.value) ** Number(ipt_number2.value)))
+    } 
+</script>

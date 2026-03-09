@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Economia com bilhete único</h1>
+    <span>Digite o valor da passagem: </span>
+    <input type="number" id="ipt_valor">
+    <span>Digite a quantidade de viagens mensais: </span>
+    <input type="number" id="ipt_qtd">
+    <button onclick="calcular()">Calcular Economia </button>
+</body>
+</html>
+<script>
+    function calcular() {
+        alert("O valor economizado com a cota foi de: " + "R$"+((Number(ipt_qtd.value) * Number(ipt_valor.value)) / 2))
+        
+    }
+</script>

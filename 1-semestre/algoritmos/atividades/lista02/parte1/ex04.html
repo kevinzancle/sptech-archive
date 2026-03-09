@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{display: flex;}
+        .container{justify-content: center; align-items: center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Onde eu moro?</h1>
+        <span>Insira o nome da rua/avenida/vila/travessa: </span>
+        <input type="text" id="ipt_rua">
+        <br>
+        <span>Insira o número da casa: </span>
+        <input type="text" id="ipt_numCasa">
+        <button onclick="exibirDados()">Enviar</button>
+    </div>
+</body>
+</html>
+<script>
+    function exibirDados() {
+        alert("Rua: " + ipt_rua.value + "\n" + "Número: " + ipt_numCasa.value)
+    }
+</script>

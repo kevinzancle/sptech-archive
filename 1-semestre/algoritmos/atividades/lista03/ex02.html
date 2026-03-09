@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Dividindo a pizza!</h1>
+    <span>Digite o valor da pizza: </span>
+    <input type="number" id="ipt_valor">
+    <span>Digite a quantidade de pessoas envolvidas: </span>
+    <input type="number" id="ipt_qtd">
+    <button onclick="dividir()">Calcular valor para cada integrante</button>
+</body>
+</html>
+<script>
+    function dividir() {
+        alert("O valor a ser pago para cada integrante é: " + (Number(ipt_valor.value) / Number(ipt_qtd.value)))
+    }
+</script>

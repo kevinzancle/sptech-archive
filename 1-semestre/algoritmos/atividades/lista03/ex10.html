@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h1>Analisador de Resultados Eleitorais</h1>
+    <span>Votos candidato A: </span>
+    <input type="text" id="candidatoA">
+    <span>Votos candidato B: </span>
+    <input type="text" id="candidatoB">
+    <span>Votos Brancos: </span>
+    <input type="text" id="votobranco">
+    <span>Votos Nulos: </span>
+    <input type="text" id="votonulo">
+    <button onclick="calculos()">Gerar Resultados</button>
+    <div id="exibir"></div>
+    <div id="exibir2"></div>
+    <div id="exibir3"></div>
+    <div id="exibir4"></div>
+</body>
+</html>
+<script>
+    function calculos(){
+        votos_totais = Number(candidatoA.value) + Number(candidatoB.value) + Number(votobranco.value) + Number(votonulo.value)
+        votos_invalidos = Number(votobranco.value) + Number(votonulo.value)
+        exibir.innerHTML = (`Votos totais: ${votos_totais}`)
+        exibir2.innerHTML = (`Votos inválidos: ${(votos_invalidos/votos_totais)*100}% - ${votos_invalidos}`)
+        exibir3.innerHTML = (`Votos candidato A : ${(Number(candidatoA.value)/votos_totais)*100}% - ${Number(candidatoA.value)}`)
+        exibir4.innerHTML = (`Votos candidato B : ${(Number(candidatoB.value)/votos_totais)*100}% - ${Number(candidatoB.value)}`)
+    }
+</script>

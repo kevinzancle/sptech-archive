@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h1>Divisão Justa da Pizza</h1>
+    <span>Digite o valor da pizza: </span>
+    <input type="number" id="ipt_valor">
+    <br>
+    <span>Digite a quantidade de amigos reunidos: </span>
+    <input type="number" id="ipt_qtd_amigos">
+    <br>
+    <button onclick="verificar()">Rola a pizza?</button>
+    <div id="exibir"></div>
+    <div id="exibir2"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        let valor = Number(ipt_valor.value)
+        let quantidade = Number(ipt_qtd_amigos.value)
+        exibir.innerHTML = `Cada amigo vai pagar R$${(valor/quantidade).toFixed(2)} pela pizza`
+        if (valor/quantidade > 20){
+            exibir2.innerHTML = `<b style="color: red"><i>Deu ruim! Pizza muito cara!</i></b>`
+        }else{
+            exibir2.innerHTML = `<b style="color: green"><i>#partiuComer!</i></b>`
+        }
+    }
+</script>

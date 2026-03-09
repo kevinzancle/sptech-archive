@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h1>Consumo de Calorias: Sua Dieta Está Saudável?</h1>
+    <span>Quantos pães franceses você tem comido por dia?</span>
+    <input type="number" id="ipt_qtd_paes">
+    <span>Quantos pacotes de bolacha recheada você tem comido por dia?</span>
+    <input type="number" id="ipt_qtd_bolacha">
+    <span>Quantos copos de achocolatado você tem toomado por dia?</span>
+    <input type="number" id="ipt_qtd_achocolatado">
+    <button onclick="verificar()">Verificar Calorias</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        exibir_mensagem = ""
+        let calorias_paes = Number(ipt_qtd_paes.value)*50
+        let calorias_bolacha = Number(ipt_qtd_bolacha.value)*80
+        let calorias_achocolatado = Number(ipt_qtd_achocolatado.value)*70
+        let calorias_totais = calorias_achocolatado + calorias_paes + calorias_bolacha
+
+        if(calorias_totais<200){
+            exibir_mensagem.innerHTML += `Calorias totais: ${calorias_totais}, Parabéns, vai ficar em forma!`
+        }else if(calorias_totais<400){
+            exibir_mensagem.innerHTML += `Calorias totais: ${calorias_totais}, Cuidado, vai ficar menos saudável!`
+        }else if(calorias_totais > 400){
+            exibir_mensagem.innerHTML += `Calorias totais: ${calorias_totais}, Alerta crítico de saúde !!!`
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h1>Classificação de Alunos: Como Está Seu Desempenho?</h1>
+    <span>Digite a nota do aluno: </span>
+    <input type="number" name="" id="ipt_nota">
+    <button onclick="classificar()">Classificar Aluno</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function classificar(){
+        exibir_mensagem.innerHTML = ""
+        let nota = Number(ipt_nota.value)
+        let desempenho = ""
+        if(nota > 0 & nota<5){
+            desempenho = "Aluno precisa de muita ajuda"
+        }else if(nota<=7){
+            desempenho = "Aluno na média"
+        }else if(nota<=9.5){
+            desempenho = "Aluno acima da média"
+        }else if(nota > 9.5 & nota <=10){
+            desempenho = "Aluno fora da curva"
+        }else{
+            desempenho = "NOTA INVÀLIDA"
+        }
+
+        exibir_mensagem.innerHTML = desempenho
+    }
+</script>

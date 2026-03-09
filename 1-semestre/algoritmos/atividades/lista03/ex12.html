@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h1>Divisão Justa da Pizza (Com Gorjeta)</h1>
+    <span>Digite o sabor da pizza: </span>
+    <input type="text" id="sabor">
+    <span>Digite o preço da pizza: </span>
+    <input type="text" id="preco">
+    <span>Digite a quantidade de amigos: </span>
+    <input type="number" id="quantidade">
+    <button onclick="calcular()">Calcular</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        gorjeta = Number(preco.value)*1.1
+        porAmigo = gorjeta / Number(quantidade.value)
+
+        exibir.innerHTML = `Pizza de ${sabor.value} - Valor a ser pago por amigo: ${porAmigo.toFixed(2)} (incluindo gorjeta)`
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20</title>
+</head>
+<body>
+    <h1>Peso no Elevador: Será Que Ele Vai se Mover?</h1>
+    <span>Digite a quantidade de homens que entraram no elevador: </span>
+    <input type="text" id="ipt_qtdHomem">
+    <br>
+    <span>Digite a quantidade de mulheres que entraram no elevador: </span>
+    <input type="text" id="ipt_qtdMulher">
+    <br>
+    <button onclick="analisar()">Ligar Elevador</button>
+    <div id="div_exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        
+        let estimativa_homem = Number(ipt_qtdHomem.value)*90 
+        let estimativa_mulher = Number(ipt_qtdMulher.value)*70 
+        let estimativa_total = estimativa_homem + estimativa_mulher
+
+        if(estimativa_total <= 500){
+            div_exibir_mensagem.innerHTML = `<p style="color: green">Elevador vai se mover! Peso total = ${estimativa_total}</p>`
+        }else{
+            div_exibir_mensagem.innerHTML = `<p style="color: red">Alguém precisa descer. Precisa perder ${estimativa_total-500}Kg para mover o elevador </p>`
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <h1>Calculadora das Fases do Sono</h1>
+    <span>Digite quantas horas você dormiu: </span>
+    <input type="number" id="horas">
+    <button onclick="estatisticas()">Gerar Estatisticas</button>
+    <br>
+    <div id="exibir"></div>
+
+</body>
+</html>
+<script>
+    function estatisticas() {
+        horas_totais = Number(horas.value)
+        exibir.innerHTML = `Horas totais dormidas = ${horas_totais}h` + "<br>" + `Fase 1 = ${horas_totais*0.05}h` + "<br>" + `Fase 2 = ${horas_totais*0.45}h` + "<br>" + `Fase 3 = ${horas_totais*0.30}h` + "<br>" + `Fase REM = ${horas_totais*0.2}h`
+   }
+</script>

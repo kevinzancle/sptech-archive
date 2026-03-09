@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de peso e altura</h1>
+    <span>Insira o seu peso: </span>
+    <input type="text" id="ipt_peso">
+    <span>Insira a sua altura: </span>
+    <input type="text" id="ipt_altura">
+    <button onclick="exibirDados()">Enviar</button>
+</body>
+</html>
+<script>
+    function exibirDados() {
+        alert("Peso: " + ipt_peso.value + "\n" + "Altura: " + ipt_altura.value)
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body>
+    <h1>Frequência Escolar: Turista ou Estudioso?</h1>
+    <span>Digite a frequência do aluno: </span>
+    <input type="text" id="ipt_frequencia">
+    <button onclick="analisar()">Analisar Frequência</button>
+    <div id="div_imagem">
+        <img src="" alt="" id="img_frequencia">
+    </div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let frequencia = Number(ipt_frequencia.value)
+        if(frequencia < 50){
+            img_frequencia.src = 'https://img.freepik.com/fotos-gratis/jovem-brasileiro-segurando-camera-vintage-mostrando-e-apontando-para-cima-com-os-dedos-numero-dois-enquanto-sorria-confiante-e-feliz_839833-31888.jpg?semt=ais_hybrid&w=740&q=80'
+        }else{
+             img_frequencia.src = 'https://www.clickguarulhos.com.br/wp-content/uploads/2015/06/42-26457712-1024x682.jpg'
+        }
+    }
+</script>

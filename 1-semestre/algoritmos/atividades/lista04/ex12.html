@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h1>Controle de Peso no Elevador: Segurança em Primeiro Lugar</h1>
+    <span>Digite o peso total no elevador: </span>
+    <input type="number" id="ipt_pesoTotal">
+    <br>
+    <button onclick="verificar()">Ligar Elevador</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        let peso = Number(ipt_pesoTotal.value)
+        if(peso<500){
+            alert("Elevador vai se mover")
+        }else if(peso >= 500){
+            alert("Alguém precisa descer do elevador")
+        }
+    }
+</script>

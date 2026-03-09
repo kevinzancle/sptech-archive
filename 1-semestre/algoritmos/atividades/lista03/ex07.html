@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h1>Simulador de Transações Bancárias</h1>
+    <button onclick="receber()">Receber 100 reais</button>
+    <button onclick="pagar()">Pagar 50 reais</button>
+    <div id="exibir">R$0</div>
+    <div id="situacao"></div>
+</body>
+</html>
+<script>
+    saldo = 0
+    function receber(){
+        saldo += 100
+        exibir.innerHTML = `RS${saldo}`
+        situacao.innerHTML = "Transferência de R$100 recebida!"
+    }
+    function pagar(){
+        saldo -= 50
+        exibir.innerHTML = `RS${saldo}`
+        situacao.innerHTML = "Pagamento de R$50 efetuado!"
+    }
+</script>

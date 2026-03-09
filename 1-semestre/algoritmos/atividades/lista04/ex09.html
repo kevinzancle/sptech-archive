@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <h1>Tempo Gasto com Séries</h1>
+    <span>Insira o nome da última série que você assistiu: </span>
+    <input type="text" id="nome_serie">
+    <br>
+    <span>Digite a quantidade de episódios assitidos: </span>
+    <input type="number" id="qtd_episodios">
+    <br>
+    <button onclick="verificar()">Verificar Nível</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        exibir.innerHTML = ""   
+        let total_horas = (Number(qtd_episodios.value)*22)/60
+        exibir.innerHTML = `Vejo que você gosta da série ${nome_serie.value}. Horas totais: ${total_horas.toFixed(2)}<br>`
+        if(total_horas > 30){
+            exibir.innerHTML += `Uau, você realmente gosta dessa série!`
+        }
+    }
+</script>

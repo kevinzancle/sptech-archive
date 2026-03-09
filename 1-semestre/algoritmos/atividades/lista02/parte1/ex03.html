@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Futebol</h1>
+    <span>Insira o nome do time: </span>
+    <input type="text" id="ipt_time">
+    <span>Insira a quantidade de títulos: </span>
+    <input type="text" id="ipt_titulos">
+    <button onclick="exibirDados()">Enviar</button>
+</body>
+</html>
+<script>
+    function exibirDados() {
+        alert("Time: " + ipt_time.value + "\n" + "Títulos: " + ipt_titulos.value)
+    }
+</script>

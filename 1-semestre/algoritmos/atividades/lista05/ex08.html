@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h1>Meta de Economia: Você Está no Caminho Certo?</h1>
+     <span>Qual a sua meta de economia?</span>
+     <input type="number" id="ipt_meta">
+     <span>Quanto você tem guardado?</span>
+     <input type="number" id="ipt_guardado">
+     <button onclick="analisar()">Analisar Economia</button>
+     <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        exibir_mensagem.innerHTML = ""
+        let meta = Number(ipt_meta)
+        let guardado = Number(ipt_guardado)
+        if(meta == guardado){
+            exibir_mensagem.innerHTML += "Parabéns, meta alcançada!"
+        }else if(guardado > meta){
+            exibir_mensagem.innerHTML += `Meta ultrapassada em ${guardado-meta}`
+        }else if(guardado<meta){
+            exibir_mensagem.innerHTML += `Força! Ainda em busca da meta! Falta ${meta-guardado}`
+        }
+    }
+</script>

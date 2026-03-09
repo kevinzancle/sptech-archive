@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h1>O ki dos sayajins!</h1>
+    <span>Insira o seu nome, guerreiro: </span>
+    <input type="text" id="ipt_nome">
+    <span>Insira o seu KI padrão: </span>
+    <input type="text" id="ipt_ki">
+    <button onclick="calcular()">Calcular evolução do KI</button>
+</body>
+</html>
+<script>
+    function calcular() {
+        alert("O ki de " + ipt_nome.value+ " na forma SuperSayajin 1 é " + Number(ipt_ki.value) * 50)
+        alert("O ki de " + ipt_nome.value + " na forma SuperSayajin 2 é " + Number(ipt_ki.value) * 100)
+    }
+</script>

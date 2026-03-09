@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h1>Analisador de Família: O Impacto dos Filhos no Entretenimento</h1>
+    <span>Insira a quantidade de filhos que você possui: </span>
+    <input type="number" id="ipt_qtd_filho">
+    <br>
+    <button onclick="analisar()">Analisar Família</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        exibir.innerHTML = ""
+        let quantidade_filhos = Number(ipt_qtd_filho.value)
+       
+        if(quantidade_filhos >= 1){
+            exibir.innerHTML += "Não tem TV <br>"
+        }
+        if(quantidade_filhos >= 2){
+            exibir.innerHTML += "Não tem internet <br>"
+        }
+        if(quantidade_filhos >= 3){
+            exibir.innerHTML += "Não tem video game <br>"
+        }
+        if(quantidade_filhos >= 4){
+            exibir.innerHTML += "Não tem netflix"
+        }
+    }
+</script>

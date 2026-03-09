@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+<body>
+    <h1>Banco XPTO: Monitoramento de Cheque Especial</h1>
+    <span>Digite o saldo da conta: </span>
+    <input type="number" id="ipt_saldo">
+    <br>
+    <span>Digite o valor do débito: </span>
+    <input type="number" id="ipt_debito">
+    <br>
+    <button onclick="analisar()">Analisar Conta</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+         exibir.innerHTML = ""
+        let saldo = Number(ipt_saldo.value)
+        let debito = Number(ipt_debito.value)
+        let saldo_final = saldo-debito
+        if(saldo_final<0){
+            exibir.innerHTML = `<b style ="color: red" >O saldo atual da conta corrente é R$${saldo_final}</b>`
+        }else{
+            exibir.innerHTML = `<i style ="color: blue" >O saldo atual da conta corrente é R$${saldo_final}</i>`
+        }
+    }
+</script>
