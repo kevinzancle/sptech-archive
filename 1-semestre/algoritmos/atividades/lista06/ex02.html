@@ -1,0 +1,52 @@
+<!-- 2. Simulador de Preferências de Compras: Será que Robervaldo Gostaria?
+
+Imagine que Robervaldo está buscando um novo celular. Ele tem algumas preferências específicas para a escolha de modelo.
+
+Robervaldo prefere celulares com tela grande (acima de 6.5 polegadas) e que sejam da cor preta ou prata.
+
+Com base nessas informações, crie um simulador no qual:
+
+a) Solicite o tamanho da tela do celular encontrado.
+
+b) Solicite a cor do celular encontrado, dentre as opções:
+
+    Preto
+    Prata
+    Azul
+    Vermelho
+
+c) Ao clicar em "Será que ele gosta?", mostre, abaixo:
+
+    A imagem de uma pessoa feliz, caso as características do celular coincidam com as preferências de Robervaldo.
+    Ou a imagem de uma pessoa decepcionada, caso contrário.   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>2. Simulador de Preferências de Compras: Será que Robervaldo Gostaria?</h1>
+    <p>Digite o tamanho da tela do celular: </p>
+    <input type="text" id="ipt_tamanho_tela">
+    <p>Digite a cor do celular (Preto, Prata, Azul, Vermelho): </p>
+    <input type="text" id="ipt_cor">
+    <button onclick="avaliar()">Será que ele vai gostar?</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        exibir_mensagem.innerHTML = ""
+        let tamanho = Number(ipt_tamanho_tela.value)
+        let cor = ipt_cor.value
+
+        if(tamanho >= 6.5 && (cor == "Preto" || cor == "Prata")){
+            exibir_mensagem.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8-eIujdN-NVV43iM0FV62but4CPE_hT6RvQ&s">`
+        }else{
+            exibir_mensagem.innerHTML = `<img src="https://img.freepik.com/fotos-gratis/homem-olhando-pela-janela_53876-20809.jpg?semt=ais_hybrid&w=740&q=80">`
+        }
+    }
+</script>

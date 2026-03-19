@@ -1,0 +1,52 @@
+<!-- 5. Avaliação do Clima: Está Agradável ou Desconfortável? 
+
+ Crie um programa em que ajude a avaliar o clima de um ambiente, o qual: 
+
+a) Solicite a temperatura 
+
+b) Solicite a umidade do ar 
+
+c) Ao clicar em 'Avaliar clima': 
+
+      c.1) Caso a umidade for inválida, ou seja, menor que 0 e maior que 100, exiba um alert "Valor de umidade inválido" e limpe qualquer outro texto que exista na tela (item c.2) 
+      c.2) Caso a umidade for válida, exiba uma dessas frases na própria página, abaixo do botão: 
+
+            "Clima agradável", caso a temperatura for entre 22 e 23 e a umidade for menor que 60. 
+            "Clima desconfortável", em caso contrário.   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h1>5. Avaliação do Clima: Está Agradável ou Desconfortável?</h1>
+    <p>Digite a temperatura: </p>
+    <input type="text" id="ipt_temperatura">
+    <p>Digite a umidade do ar: </p>
+    <input type="text" id="ipt_umidade">
+    <button onclick="avaliar()">Avaliar Clima</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        exibir_mensagem.innerHTML = ""
+        let temperatura = Number(ipt_temperatura.value)
+        let umidade  = Number(ipt_umidade.value)
+
+        if(umidade >= 0 && umidade <= 100){
+            if((temperatura == 23 || temperatura == 24) && umidade < 60){
+                exibir_mensagem.innerHTML = "Clima agradável"
+            }else{
+                exibir_mensagem.innerHTML = "Clima desconfortável"
+            }
+        }else{
+            alert("Valor de umidade inválido")
+        }
+
+        
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>6. Múltiplos de 5</h1>
+    <span>Digite o número limite: </span>
+    <input type="text" id="ipt_limite">
+    <button onclick="calcular()">Múltiplos de 5</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        let contador = 0
+        let limite = Number(ipt_limite.value)
+        let valor = 0
+
+        if(limite>=20 && limite <=100){
+            while (valor < limite) {
+            
+            valor = contador * 5
+            exibir_mensagem.innerHTML += `${valor} <br>`
+            contador ++
+        }
+        }else{
+            alert("O número deve estar entre 20 e 100")
+        }
+        
+    }
+</script>

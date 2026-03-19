@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gerenciamento de Lista de Alunos</h1>
+    <span>Digite o nome do aluno que queira cadastrar: </span>
+    <input type="text" id="ipt_aluno_cadastro">
+    <button onclick="cadastro()">Cadastrar</button>
+    <br>
+    <span>Digite o nome do aluno que deseja remover: </span>
+    <input type="text" id="ipt_aluno_remover">
+    <button onclick="remocao()">Remover</button>
+    <br>
+    <span>Atualizar Aluno: </span>
+    <button onclick="atualizar()">Atualizar</button>
+    <br>
+    <span>Exibir Aluno(s): </span>
+    <button onclick="exibir()">Exibir</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+
+    let array_alunos = []
+
+    function cadastro(){
+        exibir_mensagem.innerHTML = ""
+
+        let aluno = ipt_aluno_cadastro.value
+        let existe_aluno = array_alunos.includes(aluno)
+
+        if(aluno == ""){
+            alert("Preencha o campo de cadastro de aluno")
+        }else{
+            if(existe_aluno){
+                alert(`Aluno já cadastrado`)
+            }else{
+                array_alunos.push(aluno)
+                exibir_mensagem.innerHTML = `Aluno ${aluno} foi cadastrado(a) com sucesso!`
+            }
+        }
+    }
+
+    function remocao(){
+        exibir_mensagem.innerHTML = ""
+
+
+        let rm_aluno = ipt_aluno_remover.value
+        let existe_aluno_rm = array_alunos.includes(rm_aluno)
+
+        if(rm_aluno == ""){
+            alert("O campo precisa ser preenchido")
+        }else if(existe_aluno_rm){
+            let idx_aluno_rm = array_alunos.indexOf(rm_aluno)
+            array_alunos.splice(idx_aluno_rm, 1)
+            exibir_mensagem.innerHTML += `O aluno ${rm_aluno} foi removido(a)`
+        }
+
+        
+    }
+
+    function exibir(){
+        exibir_mensagem.innerHTML = ""
+        if(array_alunos == ""){
+            exibir_mensagem.innerHTML = "Nenhum aluno cadastrado!"
+        }else{
+            exibir_mensagem.innerHTML += `Alunos cadastrados: ${array_alunos}`
+        }
+         
+    }
+
+    function atualizar(){
+        let aluno_att = ipt_aluno_cadastro.value
+        let aluno_sub = ipt_aluno_remover.value
+        let existe_aluno_sub = array_alunos.includes(aluno_sub)
+
+        if(aluno_att == "" && aluno_sub == ""){
+            alert("Todos os campos precisam ser preenchidos para atualizar a lista!")
+        }else if(aluno_att == aluno_sub){
+                alert("Nada na lista foi alterado.")
+        }else if(aluno_att != "" && aluno_sub != ""){
+            if(aluno_sub != "" && aluno_att == ""){
+                remocao()
+            }else if(aluno_att != "" && (aluno_sub == "" || existe_aluno_sub == false)){
+                cadastro()
+            }else{
+
+            let idx_alunoSub = array_alunos.indexOf(aluno_sub)
+            array_alunos.splice(idx_alunoSub, 1, aluno_att)
+            }
+        }
+        
+    }
+
+</script>

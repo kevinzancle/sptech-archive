@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>11. Tabuada Colorida</h1>
+    <span>Qual a tabuada desejada (2 a 9)? : </span>
+    <input type="text" id="ipt_tabuada">
+    <span>Digite o limite da tabuada: </span>
+    <input type="text" id="ipt_limite">
+    <button onclick="tabuada()">Gerar</button>
+    <br>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function tabuada(){
+        exibir_mensagem.innerHTML = ""
+        let tabuada = Number(ipt_tabuada.value)
+        let limite = Number(ipt_limite.value)
+        let contador = 1
+        let valor = 0
+
+        if(tabuada >= 2 && tabuada <= 9){
+            while (contador<=limite) {
+            valor = contador * tabuada
+            if(contador%2 == 0){
+                exibir_mensagem.innerHTML += `<p style = "color: blue">${tabuada} X ${contador} = ${valor} </p>`
+            }else{
+                exibir_mensagem.innerHTML += `<p style = "color: red">${tabuada} X ${contador} = ${valor} </p>`
+            }
+            contador++
+            }
+        }else{
+            alert("O número deve estar entre 2 e 9!")
+        }
+    }
+</script>

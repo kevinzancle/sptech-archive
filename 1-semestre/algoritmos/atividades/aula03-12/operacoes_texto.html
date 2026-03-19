@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_texto" oninput="analisar()">
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let texto = ipt_texto.value
+        let tamanho = texto.length
+
+        // startsWith() endsWith()
+        // includes é similar ao indexOf() só que retorna um booleano
+        // .toLowerCase() .toUpperCase()
+        // .replace() .replaceAll()
+
+        div_mensagem.innerHTML = `O tamanho do texto é: ${tamanho} <br>`
+
+        if(tamanho >= 8){
+             div_mensagem.innerHTML += `O texto tem 8 ou mais caracteres <br>`
+        }else{
+            div_mensagem.innerHTML += `O texto tem menos de 8 caracteres <br>`
+        }
+
+        let indice_ponto_com = texto.indexOf(".com")
+        let indice_arroba = texto.indexOf("@")
+
+        div_mensagem.innerHTML += `Índice do .com: ${indice_ponto_com} <br>`
+        div_mensagem.innerHTML += `Índice do @: ${indice_arroba} <br>`
+
+        if((indice_arroba != -1 && indice_ponto_com != -1) && texto.endsWith(".com")){
+            if(indice_arroba < indice_ponto_com){
+             div_mensagem.innerHTML += `Formatação correta <br>`
+        }else{
+            div_mensagem.innerHTML += `Formatação incorreta <br>`
+        }
+        }else{
+            div_mensagem.innerHTML += `ERRO <br>`
+        }
+
+        if(tamanho > 0){
+            div_mensagem.innerHTML += texto[0] + "<br>"
+            div_mensagem.innerHTML += texto[tamanho-1] + "<br>"
+
+            texto_lower = texto.toLowerCase()
+            texto_capitalize = texto[0].toUpperCase() + texto.substring(1).toLowerCase()
+        
+            div_mensagem.innerHTML += texto_capitalize + "<br>"
+
+            texto_trocado = texto.replace("i", 1)
+            texto_trocado_tudo = texto.replaceAll("i", 1)
+
+            div_mensagem.innerHTML += texto_trocado, texto_trocado_tudo + "<br>"
+
+            let regex = new RegExp("[0-9]")
+            let contem_numeros = regex.test(texto)
+
+            if(contem_numeros){
+                 div_mensagem.innerHTML += `Contém números`
+            }else{
+                div_mensagem.innerHTML += `Não contém números`
+            }
+        }
+
+
+
+        // Obter o índice do @ e validar se está antes ou depois do .com
+    }
+</script>

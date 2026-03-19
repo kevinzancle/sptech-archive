@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Questão 3</title>
+</head>
+<body>
+   <h2>Questão 3</h2>
+   
+   <span>Quantidade de MB de internet consumida no plano</span>
+   <input type="text" id="input_mb"> <br>
+
+   <span>Indicação se há telefone vinculado ao plano</span>
+   <input type="text" id="input_indicacao"> <br>
+
+   <button onclick="calcular()">Calcular Despesa</button>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+/* Faça sua lógica aqui! Não altere o HTML. */
+function calcular() {
+   div_mensagem.innerHTML = ""
+
+   let qtd_mb = Number(input_mb.value)
+   let ind_tel_vinculado = input_indicacao.value
+   let valor_mb = 0
+   let valor_acrescimo = 0
+   let valor_total = 0
+
+   if(qtd_mb <= 200){
+      valor_mb = qtd_mb + 40
+   }else if(qtd_mb > 200){
+      valor_mb = qtd_mb -40
+   }
+
+   if(ind_tel_vinculado == "sim"){
+      valor_acrescimo = valor_mb * 0.15
+      div_mensagem.innerHTML = ` Com o consumo de ${qtd_mb.toFixed(2)} MB de internet, o valor base do plano de internet é R$ ${valor_mb.toFixed(2)} totalizando R$ ${(valor_mb + valor_acrescimo).toFixed(2)} com telefone.`
+   }else if(ind_tel_vinculado == "não"){
+      div_mensagem.innerHTML = ` Com o consumo de ${qtd_mb.toFixed(2)} MB de internet, o valor do plano de internet totaliza R$ ${valor_mb.toFixed(2)}`
+   }
+
+}
+</script>

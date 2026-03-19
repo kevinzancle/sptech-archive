@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>9. Pares no Intervalo</h1>
+    <div>Digite o intervalo: </div>
+    <span>Primeiro número: </span>
+    <input id="ipt_intervalo1">
+    <span>Segundo número: </span>
+    <input id="ipt_intervalo2">
+    <button onclick="contar()">S2 Pares</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function contar(){
+
+        let contador = 0
+        let intervalo1 = Number(ipt_intervalo1.value)
+        let intervalo2 = Number(ipt_intervalo2.value)
+        contador += intervalo1
+
+        if(intervalo1 < intervalo2){
+
+            if(intervalo1%2 != 0){
+                contador ++
+            }
+
+            while (contador <= intervalo2) {
+            exibir_mensagem.innerHTML += `${contador} <br>`
+            contador += 2
+        }
+        }else{
+            alert("ERRO")
+        }
+        
+    }
+</script>

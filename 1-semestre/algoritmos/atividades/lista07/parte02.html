@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro de Viagens</h1>
+    <span>Digite o nome do lugar: </span>
+    <input type="text" id="ipt_lugar">
+    <span>Digite o valor gasto na viagem: </span>
+    <input type="text" id="ipt_gasto">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="exibir_mensagem"></div>
+    <h2>Buscar um lugar</h2>
+    <span>Digite o nome do local: </span>
+    <input type="text" id="ipt_busca">
+    <button onclick="buscar()">Buscar</button>
+    <div id="exibir_busca"></div>
+</body>
+</html>
+<script>
+
+    let array_lugar = []
+    let array_gasto = []
+
+    function cadastrar(){
+        array_lugar.push(ipt_lugar.value)
+        array_gasto.push(ipt_gasto.value)
+        exibir_mensagem.innerHTML = array_lugar + array_gasto
+        console.log(array_lugar[0])
+    }
+
+    function buscar(){
+        let nome_busca = ipt_busca.value
+        let primeiro_indice = array_lugar.indexOf(nome_busca)
+        let ultimo_indice = array_lugar.lastIndexOf(nome_busca)
+
+        // 1 vez = 2 indices iguais
+        // 2 vezes = 2 indices diferentes
+
+
+        if(array_lugar.includes(nome_busca)){
+            if(primeiro_indice == ultimo_indice){
+                exibir_busca.innerHTML = `Você já visitou ${nome_busca} e gastou R$${array_gasto[array_lugar.indexOf(nome_busca)]}`
+            }else if(primeiro_indice != ultimo_indice){
+                 exibir_busca.innerHTML = `Você já visitou ${nome_busca} e gastou R$${array_gasto[array_lugar.indexOf(nome_busca)]} da primeira vez e R$${array_gasto[array_lugar.lastIndexOf(nome_busca)]} da última vez`
+            }
+        }else{
+            exibir_busca.innerHTML = `Você nunca visitou ${nome_busca}`
+        }
+
+    }
+</script>

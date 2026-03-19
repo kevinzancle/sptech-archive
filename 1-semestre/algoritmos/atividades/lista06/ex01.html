@@ -1,0 +1,49 @@
+<!-- 
+1. Sistema de Avaliação de Atendimento: Dê Sua Nota! 
+
+Crie um pequeno sistema de avaliação de atendimento, o qual: 
+
+a) Pergunte a nota para o atendimento 
+
+b) Ao clicar num botão "Avaliar atendimento", pode uma dessas frases abaixo do botão: 
+
+    b.1) "Nota inválida", caso a nota não esteja entre 0 e 10 
+
+    b.2) "Não aprovado", caso a nota for entre 0 e menor que 5 
+
+    b.3) "Neutro", caso a nota for entre 5 e 6 
+
+    b.4) "Aprovado", caso a nota for mais que 6  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>1. Sistema de Avaliação de Atendimento: Dê Sua Nota! </h1>
+    <p>Digite a nota do atendimento: </p>
+    <input type="text" id="ipt_nota">
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        let nota = Number(ipt_nota.value)
+        let mensagem
+        if(nota >= 0 && nota < 5){
+            mensagem = `Não aprovado`
+        }else if(nota >= 5 && nota <= 6){
+            mensagem = `Neutro`
+        }else if(nota > 6 && nota <= 10){
+            mensagem = `Aprovado`
+        }else{
+            mensagem = `Nota inválida`
+        }
+
+        exibir_mensagem.innerHTML = mensagem
+    }
+</script>

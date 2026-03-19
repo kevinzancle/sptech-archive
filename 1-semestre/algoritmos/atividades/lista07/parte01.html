@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Desafio: Adivinhe o Ranking da Competição</h1>
+    <span>Palpite 1 colocado: </span>
+    <input type="text" id="ipt_1colocado">
+    <br>
+    <span>Palpite 2 colocado: </span>
+    <input type="text" id="ipt_2colocado">
+    <br>
+    <span>Palpite 3 colocado: </span>
+    <input type="text" id="ipt_3colocado">
+    <br>
+    <span>Palpite 4 colocado: </span>
+    <input type="text" id="ipt_4colocado">
+    <br>
+    <span>Palpite 5 colocado: </span>
+    <input type="text" id="ipt_5colocado">
+    <br>
+    <button onclick="palpite()">Verificar</button>
+    <div id="exibir_mensagem"></div>
+    <br>
+    <h2>Meus Campeões</h2>
+    <span>Digite o nome de um campeão para ser adicionado: </span>
+    <input type="text" id="ipt_adc_campeao">
+    <button onclick="adicionar_campeao()">Adicionar</button>
+    <div id="exibir_adc_campeoes"></div>
+    <h2>Buscar campeão</h2>
+    <span>Buscar Campeão</span>
+    <input type="text" id="ipt_buscar_campeao">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="exibir_busca"></div>
+</body>
+</html>
+<script>
+
+    let palpite_contador = 1
+    let classificacao = ["Alfa", "Bravo", "Charlie", "Delta", "Echo"]
+
+
+    function palpite(){
+        
+        let palpites = []
+        let acertos = 0
+        let array_acertos = []
+        let array_erros = []
+        palpites.push(ipt_1colocado.value, ipt_2colocado.value, ipt_3colocado.value, ipt_4colocado.value, ipt_5colocado.value)
+
+        if (palpites[0] == classificacao[0]){
+            array_acertos.push(palpites[0])
+        }else{
+            array_erros.push(classificacao[0])
+        }
+        if (palpites[1] == classificacao[1]){
+            array_acertos.push(palpites[1])
+        }else{
+            array_erros.push(classificacao[1])
+        }
+        if (palpites[2] == classificacao[2]){
+            array_acertos.push(palpites[2])
+        }else{
+            array_erros.push(classificacao[2])
+        }
+        if (palpites[3] == classificacao[3]){
+            array_acertos.push(palpites[3])
+        }else{
+            array_erros.push(classificacao[3])
+        }
+        if (palpites[4] == classificacao[4]){
+            array_acertos.push(palpites[4])
+        }else{
+            array_erros.push(classificacao[4])
+        }
+
+        exibir_mensagem.innerHTML += `<br> PALPITE: ${palpite_contador} <br>`
+
+        if(array_acertos.length>=3){
+            exibir_mensagem.innerHTML += "Você conhece bem essa competição! <br>"
+        }else{
+             exibir_mensagem.innerHTML += "Você precisa acompanhar mais essa competição! <br>"
+        }
+
+        
+        exibir_mensagem.innerHTML += `Campeões: 🥇${classificacao[0].toUpperCase()}, ${classificacao[1]}, ${classificacao[2]}, ${classificacao[3]}, ${classificacao[4]} <br>`
+        exibir_mensagem.innerHTML += `${array_acertos.length} acertos: ${array_acertos} <br>`
+        exibir_mensagem.innerHTML += `${array_erros.length} erros: ${array_erros} <br><br>`
+        
+        palpite_contador ++
+    }
+
+    let campeoes_usuario = []
+
+    function adicionar_campeao(){
+        campeoes_usuario.push(ipt_adc_campeao.value)
+        exibir_adc_campeoes.innerHTML = ` Lista: ${campeoes_usuario}`
+    }
+
+    function pesquisar(){
+        let nome_pesquisa = ipt_buscar_campeao.value
+
+        tem_lsistema = classificacao.includes(nome_pesquisa)
+        tem_lusuario = campeoes_usuario.includes(nome_pesquisa)
+
+        if(tem_lsistema && tem_lusuario){
+            exibir_busca.innerHTML = `O nome ${nome_pesquisa} está na lista do sistema e na lista do usuário.`
+        }else if(tem_lsistema){
+            exibir_busca.innerHTML = `O nome ${nome_pesquisa} está na lista do sistema.`
+        }else if(tem_lusuario){
+            exibir_busca.innerHTML = `O nome ${nome_pesquisa} está na lista do usuário.`
+        }else{
+            exibir_busca.innerHTML = `O nome ${nome_pesquisa} não está em nenhuma das listas.`
+        }
+    }
+
+</script>

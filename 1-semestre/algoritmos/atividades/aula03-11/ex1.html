@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Lógicos</title>
+</head>
+<body>
+    <h1>Você pode entrar?</h1>
+    <p>Digite a sua idade: </p>
+    <input type="text" id="ipt_idade">
+    <p>Está acompanhada de um adulto?</p>
+    <input type="text" id="ipt_adulto">
+    <p>Tem convite?</p>
+    <input type="text" id="ipt_convite">
+    <br>
+    <button onclick="validarEntrada()">Posso entrar?</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function validarEntrada(){
+        
+        let idade = Number(ipt_idade.value)
+        let convite = ipt_convite.value
+        let acompanhado = ipt_adulto.value
+
+        // if(idade >= 18){
+        //     if(convite == "sim"){
+        //         div_mensagem.innerHTML = `Pode entrar`
+        //     }else if(convite == "não"){
+        //         div_mensagem.innerHTML = `Não pode entrar`
+        //     }
+        // }else{
+        //     div_mensagem.innerHTML = `Não pode entrar`
+        // }
+
+        // if(idade >= 18 && convite == "sim" || acompanhado == "sim"){
+        //     div_mensagem.innerHTML = `Pode entrar<br>`
+        // }else{
+        //     div_mensagem.innerHTML = `Não pode entrar<br>`
+        // }
+
+        if((idade < 18 && acompanhado == "não") || convite == "não"){
+            div_mensagem.innerHTML = `Não pode entrar`
+        }else{
+            div_mensagem.innerHTML = `Pode entrar`
+            
+        }
+    }
+</script>

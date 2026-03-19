@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>10. Corrida de Voltas</h1>
+    <span>Quantas voltas o carro dará? : </span>
+    <input type="text" id="ipt_voltas">
+    <button onclick="voltas()">Iniciar Corrida!</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function voltas(){
+        exibir_mensagem.innerHTML = ""
+        let qtd_voltas = Number(ipt_voltas.value)
+        let contador = 1
+
+        while (contador <= qtd_voltas) {
+            exibir_mensagem.innerHTML += `Carro dando a ${contador} volta <br>`
+            contador ++ 
+        }
+        exibir_mensagem.innerHTML += `Corrida Finalizada`
+    }
+</script>
