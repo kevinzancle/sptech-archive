@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Palíndromo</h1>
+    <span>Digite o texto que deseja inverter: </span>
+    <input type="text" id="ipt_texto">
+    <button onclick="inverter()">Inverter</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    
+    function inverter(){
+        div_mensagem.innerHTML = ""
+        let texto = ipt_texto.value
+        let texto_inv = ""
+        let texto_sem_espaco = ""
+
+        for (let j = 0; j < texto.length; j++) {
+            if(texto[j] == " "){
+                continue
+            }
+            texto_sem_espaco += texto[j]
+            
+            
+            
+        }
+
+        for (let i = texto_sem_espaco.length-1; i >= 0; i--) {
+            texto_inv += texto_sem_espaco[i]   
+        }
+        
+        // console.log(texto_inv.toLowerCase())
+        // console.log(texto_sem_espaco.toLowerCase())
+
+        if(texto_inv.toLowerCase() == texto_sem_espaco.toLowerCase()){
+            div_mensagem.innerHTML += `O texto "${texto}" é um palíndromo <br>`
+        }else{
+            div_mensagem.innerHTML += `O texto "${texto}" não é um palíndromo <br>`
+        }
+        div_mensagem.innerHTML += `Texto invertido: ${texto_inv}`
+    }
+</script>

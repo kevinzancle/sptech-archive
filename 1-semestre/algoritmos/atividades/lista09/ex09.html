@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FizzBuzz</h1>
+    <button onclick="verificar()">Verificar</button>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        divMensagem.innerHTML = ""
+    
+        for (let i = 1; i <= 100; i++) {
+            
+            if(i%3 == 0 && i%5 == 0){
+                divMensagem.innerHTML += `FizzBuzz<br>`
+            }else if(i%3 == 0){
+                divMensagem.innerHTML += `Fizz<br>`
+            }else if(i%5 == 0){
+                divMensagem.innerHTML += `Buzz<br>`
+            }else{
+                divMensagem.innerHTML += i + "<br>"
+            }
+            
+        }
+
+    }
+</script>

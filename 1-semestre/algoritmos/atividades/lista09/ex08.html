@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Acompanhando a Poupança</h1>
+    <span>Digite quantos depósitos você fez no banco: </span>
+    <input type="text" id="ipt_qtdDeposito">
+    <span>Digite o valor de cada depósito: </span>
+    <input type="text" id="ipt_valorDeposito">
+    <button onclick="calcular()">Acompanhar Grana</button>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        divMensagem.innerHTML = ""
+        let qtd = Number(ipt_qtdDeposito.value)
+        let value = Number(ipt_valorDeposito.value)
+        let total = 0
+        for (let i = 1; i <= qtd; i++) {
+            if(i >= 3 && i%3 == 0){
+                total += value 
+                total += total = total*0.01
+                divMensagem.innerHTML += `<img style="width:1em" src="https://cdn-icons-png.flaticon.com/512/148/148839.png"> ${i} mês: R$${total}<br>`
+            }else{
+                total += value
+                divMensagem.innerHTML += `${i} mês: R$${total}<br>`
+            }
+
+            // divMensagem.innerHTML += `${i} mês: R$${total}<br>`
+        }
+        divMensagem.innerHTML += `Total guardado: R$${total}`
+    }
+</script>

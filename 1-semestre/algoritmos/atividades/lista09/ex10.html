@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fazes da Vida</h1>
+    <span>Digite a sua idade: </span>
+    <input type="text" id="ipt_idade" oninput="fases()">
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function fases(){
+        divMensagem.innerHTML = ""
+        let idade = Number(ipt_idade.value)
+        mensagem = ""
+        for (let i = 0; i <= idade; i++) {
+            
+            if(i>= 0 && i<= 4){
+                mensagem += `${i} anos (Primeira infância)<br>`
+            }else if(i>=4 && i<=6){
+                mensagem += `${i} anos (Pré escolar)<br>`
+            }else if(i>=6 &&  i<=10){
+                 mensagem += `${i} anos (Segunda infância)<br>`
+            }else if(i>=10 &&  i<=18){
+                 mensagem += `${i} anos (Adolescência)<br>`
+            }else if(i>=18 &&  i<=50){
+                 mensagem += `${i} anos (Adulto)<br>`
+            }else if(i>=50 &&  i<=100){
+                 mensagem += `${i} anos (Melhor idade)<br>`
+            }else if(i>=100){
+                 mensagem += `${i} anos (matusalém)<br>`
+            }else{
+                alert("Idade inválida")
+            }
+        }
+        divMensagem.innerHTML = mensagem
+    }
+</script>

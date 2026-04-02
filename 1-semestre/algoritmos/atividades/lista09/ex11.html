@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encontrar elementos duplicados</h1>
+    <span>Digite o item a ser adicionado: </span>
+    <input type="text" id="ipt_item">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="remover()">Remover Duplicatas</button>
+    <button onclick="duplicados()">Exibir Duplicados</button>
+    <div id="div_exibir_lista"></div>
+    <div id="div_exibir_duplicados"></div>
+</body>
+</html>
+<script>
+    let itens = []
+    
+    function adicionar(){
+        let item = ipt_item.value
+        itens.push(item)
+        div_exibir_lista.innerHTML = itens
+    }
+
+    function remover(){
+        for (let i = 0; i < itens.length; i++) {
+            let analisado = itens[i]
+            for (let j = 0; j < itens.length; j++) {
+                if (analisado == itens[j]) {
+                    itens.splice(itens[j], 1)
+                }
+                
+            }
+            
+        }
+        div_exibir_lista.innerHTML = itens
+    }
+
+    function duplicados(){
+
+        for (let i = 0; i < itens.length; i++) {
+            let item = itens[i]
+            let contador = 0
+            for (let j = 0; j < itens.length; j++) {
+ 
+                if(itens[i] == itens[j]){
+                    contador++
+                }
+                if(itens[i] == itens[j] && contador>1){
+                    div_exibir_duplicados.innerHTML += itens[i]
+                }
+                
+            }
+            
+        }
+
+    }
+    
+</script>

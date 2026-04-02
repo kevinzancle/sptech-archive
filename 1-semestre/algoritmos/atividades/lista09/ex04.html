@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contador de Coca-Colas </h1>
+    <span>Digite quantas cocas-cola você ja bebeu na vida: </span>
+    <input type="number" id="ipt_qtd">
+    <button onclick="contar()">Ver a quantidade</button>
+    <div id="imagens"></div>
+</body>
+</html>
+<script>
+    function contar(){
+        imagens.innerHTML = ""
+        let qtd = Number(ipt_qtd.value)
+
+        for (let i = 0; i < qtd; i++) {
+            imagens.innerHTML += '<img  style="width:200px "src="https://www.coca-cola.com/content/dam/onexp/br/pt/brands/coca-cola/brazil_pt_coca_cola_original_750x750.jpg">'
+            
+        }
+    }
+</script>

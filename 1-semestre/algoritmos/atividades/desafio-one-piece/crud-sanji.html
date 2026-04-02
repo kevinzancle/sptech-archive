@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRUD do Sanji</h1>
+    <span>Digite o item que será incluido no estoque: </span>
+    <input type="text" id="ipt_cadastro_comida">
+    <button onclick="cadastrar()">Inserir</button>
+    <button onclick="verificar_qtd()">Verificar</button>
+    <div id="div_exibir_qtd"></div>
+    <span>Digite o nome do item: </span>
+    <input type="text" id="ipt_item_pesquisa">
+    <button onclick="pesquisar_item()">Pesquisar</button>
+    <div id="div_exibir_pesquisa"></div>
+    <button onclick="exibir_estoque()">Exibir Estoque</button>
+    <div id="exibir_lista"></div>
+    <span>digite o nome atual da comida: </span>
+    <input type="text" id="ipt_nome_atual">
+    <span>digite o novo nome da comida: </span>
+    <input type="text" id="ipt_nome_novo">
+    <button onclick="alterarItem()">Alterar Nome</button>
+    <br>
+    <span>Digite o nome da comida que você deseja deletar: </span>
+    <input type="text" id="ipt_nome_deletar">
+    <button onclick="deletarItem()">Deletar Item</button>
+</body> 
+</html>
+<script>
+    let estoque = []
+    
+
+    function cadastrar(){
+        let item = ipt_cadastro_comida.value
+        estoque.push(item)
+    }
+
+    function verificar_qtd(){
+        div_exibir_qtd.innerHTML = estoque.length
+
+        if(estoque.length < 3){
+            div_exibir_qtd.innerHTML = `Desse jeito, o Luffy devora até o navio`
+        }else if(estoque.length >=3 && estoque.length <=7){
+            div_exibir_qtd.innerHTML = `O comilão do Luffy não vai deixar sobrar nenhuma comida`
+        }else if(estoque.length >=8 && estoque.length <= 10){
+            div_exibir_qtd.innerHTML = `Assim, talvez sobre um pouco para a tripulação`
+        }else if(estoque.length > 10){
+            div_exibir_qtd.innerHTML = `Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!`
+        }
+    }
+
+    function pesquisar_item(){
+        let item_pesquisa = ipt_item_pesquisa.value
+        let contador_ocorrencia = 0
+        for (let i = 0; i < estoque.length; i++) {
+            const item = estoque[i];
+            if(item == item_pesquisa){
+                contador_ocorrencia += 1
+            }
+            
+        }
+        if(contador_ocorrencia > 0){
+            div_exibir_pesquisa.innerHTML = `Temos a comida ${item_pesquisa} e há ${contador_ocorrencia} unidade(s) dela <br>`
+        }else{
+            div_exibir_pesquisa.innerHTML = `Alguém vai ter que comprar ${item_pesquisa}, tá fazendo falta...`
+        }
+    }
+
+    function exibir_estoque(){
+        for (let i = 0; i < estoque.length; i++) { 
+
+            let contador_ocorrencia = 0
+
+            for (let y = 0; y < estoque.length; y++) {
+
+                if(estoque[i] == estoque[y]){
+                    contador_ocorrencia += 1
+                }
+            }
+            exibir_lista.innerHTML += `ITEM: ${estoque[i]} - QUANTIDADE: ${contador_ocorrencia}<br>`
+        }
+    }
+
+    function alterarItem(){
+        let atual = ipt_nome_atual.value
+        let novo = ipt_nome_novo.value
+
+        for (let i = 0; i < estoque.length; i++) {
+
+            if(estoque[i] == atual){
+
+                let index = estoque.indexOf(estoque[i])
+                estoque.splice(index, 1, novo)
+            }
+            
+        }
+    }
+
+    function deletarItem(){
+        let item_deletar = ipt_nome_deletar.value
+        for (let i = 0; i < estoque.length; i++) {
+
+            if(estoque[i] == item_deletar){
+
+                let index = estoque.indexOf(estoque[i])
+                estoque.splice(index, 1)
+            }
+            
+        }
+    }
+
+</script>

@@ -18,23 +18,27 @@
 </html>
 <script>
     function tabuada(){
+        
         exibir_mensagem.innerHTML = ""
+
         let tabuada = Number(ipt_tabuada.value)
         let limite = Number(ipt_limite.value)
         let contador = 1
-        let valor = 0
 
         if(tabuada >= 2 && tabuada <= 9){
+
             while (contador<=limite) {
-            valor = contador * tabuada
+
             if(contador%2 == 0){
-                exibir_mensagem.innerHTML += `<p style = "color: blue">${tabuada} X ${contador} = ${valor} </p>`
+                exibir_mensagem.innerHTML += `<p style = "color: blue">${tabuada} X ${contador} = ${tabuada*contador} </p>`
             }else{
-                exibir_mensagem.innerHTML += `<p style = "color: red">${tabuada} X ${contador} = ${valor} </p>`
+                exibir_mensagem.innerHTML += `<p style = "color: red">${tabuada} X ${contador} = ${tabuada*contador} </p>`
             }
             contador++
             }
+
         }else{
+
             alert("O número deve estar entre 2 e 9!")
         }
     }

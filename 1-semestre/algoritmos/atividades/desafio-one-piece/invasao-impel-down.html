@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Digite a quantidade de batalhas: </span>
+    <input type="text" id="ipt_batalhas">
+    <br>
+    <span>Digite a quantidade de marinheiros em cada batalha: </span>
+    <input type="text" id="ipt_qtd_marinheiros">
+    <br>
+    <span>Digite a quantidade de carnes disponíveis: </span>
+    <input type="text" id="ipt_qtd_carne">
+    <button onclick="batalha()">Batalhar</button>
+    <div id="exibir_mensagem"></div>
+</body>
+</html>
+<script>
+    function batalha() {
+
+    let qtdBatalhas = Number(ipt_batalhas.value)
+    let qtdMarinheiro = Number(ipt_qtd_marinheiros.value)
+    let qtdCarne = Number(ipt_qtd_carne.value)
+
+    let energia = 100
+    let fimJogo = false
+    let contador_marinheiro = 0
+
+    for (let i = 0; i < qtdBatalhas && !fimJogo; i++) {
+       energia = 100 - (i * 10)
+
+       if(energia <= 0 && qtdCarne == 0){
+        fimJogo = true
+       }
+
+        for (let j = 0; j < qtdMarinheiro && !fimJogo; j++) {
+
+            if (energia >= 5) {
+                energia -= 5
+                contador_marinheiro++
+            } else {
+
+                if (qtdCarne > 0) {
+                    qtdCarne--
+                    energia += 95
+                    contador_marinheiro++
+                } else {
+                    fimJogo = true
+                }
+
+            }
+
+        }
+    }
+
+    let venceuPerdeu
+    if(fimJogo == true){
+        venceuPerdeu = "Perdeu :("
+    }else{
+        venceuPerdeu = "Vitorioso :)"
+    } 
+
+    exibir_mensagem.innerHTML = `Venceu? ${venceuPerdeu}, Carnes ${qtdCarne}, marinheiros derrotados ${contador_marinheiro}, energia final ${energia}`
+}
+</script>

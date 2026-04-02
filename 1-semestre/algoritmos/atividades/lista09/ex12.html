@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inverter Texto</h1>
+    <span>Digite o texto que deseja verificar: </span>
+    <input type="text" id="ipt_texto">
+    <button onclick="inverter()">Inverter</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function inverter(){
+        let texto = ipt_texto.value
+        let texto_inv = ""
+
+        console.log(texto)
+
+        for (let i = texto.length-1; i >= 0; i--) {
+            texto_inv += texto[i]   
+        }
+        
+        div_mensagem.innerHTML = texto_inv
+    }
+</script>

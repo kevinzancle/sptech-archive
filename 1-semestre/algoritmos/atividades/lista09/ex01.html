@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Números Primos</h1>
+    <span>Digite o número: </span>
+    <input type="number" id="ipt_num">
+    <button onclick="analisar()">Analisar</button>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        divMensagem.innerHTML = ``
+        let num = Number(ipt_num.value)
+        let contador = 0
+        for (let i = 0; i <= num; i++) {
+            if(num%i == 0){
+                divMensagem.innerHTML += i + "<br>"
+                contador ++
+            }
+            
+        }
+        if(contador == 2){
+                divMensagem.innerHTML += `O número digitado é primo, portanto só é divisível por 1 e por ele mesmo!`
+            }else{
+                divMensagem.innerHTML += `O número não é primo`
+            }
+    }
+</script>

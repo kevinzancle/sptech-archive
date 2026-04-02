@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Café com Leite na Medida Certa</h1>
+    <span>Digite quantas xícaras de café com leite você já tomou na vida: </span>
+    <input type="number" id="ipt_qtd">
+    <button onclick="calcular()">Ver a quantidade</button>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        divMensagem.innerHTML = ""
+        let qtd = Number(ipt_qtd.value)
+        let leite = 0
+        let cafe = 0
+        for (let i = 0; i < qtd; i++) {
+            leite += 1
+            cafe += 2
+            divMensagem.innerHTML += '<img style="width: 50px" src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg">'
+            divMensagem.innerHTML += '<img style="width: 50px" src="https://thumbs.dreamstime.com/b/colher-de-caf%C3%A9-de-medi%C3%A7%C3%A3o-com-o-p%C3%B3-do-caf%C3%A9-isolado-no-branco-76973552.jpg">'
+            divMensagem.innerHTML += '<img style="width: 50px" src="https://thumbs.dreamstime.com/b/colher-de-caf%C3%A9-de-medi%C3%A7%C3%A3o-com-o-p%C3%B3-do-caf%C3%A9-isolado-no-branco-76973552.jpg">' + '<br>'
+        }
+        divMensagem.innerHTML += `<br>${leite} Colheres de leite em pó e ${cafe} Colheres de café em pó`
+    }
+</script>
